@@ -1,0 +1,29 @@
+<br/>
+<%= link_to "back to top", games_path %>
+<%if @game.errors.any?%>
+<h2>THERE IS AN ERROREDITEDFROMFORM</h2>
+<ul>
+  <% @game.errors.full_messages.each do |msg|%>
+    <li><%= msg %></li>
+  <%end%>
+</ul>
+<%end%>
+
+<%= form_for @game do |f| %>
+
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </p>
+  <p>
+    <%= f.label :path %>
+    <%= f.text_field :path %>
+  </p>
+
+  <%= f.submit%>
+
+<%end%>

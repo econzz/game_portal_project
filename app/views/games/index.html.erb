@@ -1,1 +1,21 @@
-this is index2
+<h1>THIS IS GAME PAGE</h1>
+<%= link_to "create new game", new_game_path %><br/><br/><br/>
+<table>
+<tr>
+  <th>id</th>
+  <th>TITLE</th>
+  <td>DESCRIPTION</td>
+</tr>
+
+<% @games.each do |game| %>
+  <tr>
+    <td><%= game.id %></td>
+    <td><%= game.name%></td>
+    <td><%= game.description%></td>
+    <td><%= link_to "edit", edit_game_path(game) %></td>
+    <td><%= link_to "show", game_path(game)%></td>
+    <td><%= link_to "delete", game_path(game), method: :delete, data:{confirm: "are you sure?"} %></td>
+  </tr>
+<%end%>
+
+</table>

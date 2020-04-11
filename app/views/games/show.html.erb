@@ -1,0 +1,6 @@
+show
+<%= link_to "back to top", games_path %>
+<p> title is <%= @game.name%> </p>
+<p> description is <%= @game.description %></p>
+
+<%= link_to "edit this game", edit_game_path(@game) %>
