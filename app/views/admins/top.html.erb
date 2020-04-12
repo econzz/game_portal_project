@@ -1,6 +1,30 @@
-LOGGED IN TOP
+
+<body id="page-top">
+  <div id="wrapper">
+    	<%= render 'navigation'%>
+    <div id="content-wrapper" class="d-flex flex-column">
+      <div id="content">
+        <%= render 'header'%>
+
+        <!-- Container Fluid-->
+        <div class="container-fluid" id="container-wrapper">
+          <%= render 'breadcrumb'%>
+
+          <div class="text-center">
+            
+            <h4 class="pt-3">save your <b>imagination</b> here!</h4>
+          </div>
 
 
-<%= link_to admin_logout_path do%>
-LOGOUT
-<% end %>	
+        </div>
+        <!---Container Fluid-->
+      </div>
+      <%= render 'footer'%>
+    </div>
+  </div>
+
+  <!-- Scroll to top -->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+

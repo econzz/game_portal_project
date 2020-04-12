@@ -1,3 +1,28 @@
-NEW GAMES PAGE
 
-<%= render 'form'%>
+
+<body id="page-top">
+  <div id="wrapper">
+    	<%= render '/admins/navigation'%>
+    <div id="content-wrapper" class="d-flex flex-column">
+      <div id="content">
+        <%= render '/admins/header'%>
+
+        <!-- Container Fluid-->
+        <div class="container-fluid" id="container-wrapper">
+          <%= render '/admins/breadcrumb'%>
+          
+              
+          <%= render 'form'%>
+
+        </div>
+        <!---Container Fluid-->
+      </div>
+      <%= render '/admins/footer'%>
+    </div>
+  </div>
+
+  <!-- Scroll to top -->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+

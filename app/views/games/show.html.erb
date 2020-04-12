@@ -1,6 +1,72 @@
-show
-<%= link_to "back to top", games_path %>
-<p> title is <%= @game.name%> </p>
-<p> description is <%= @game.description %></p>
+<body id="page-top">
+  <div id="wrapper">
+    	<%= render '/admins/navigation'%>
+    <div id="content-wrapper" class="d-flex flex-column">
+      <div id="content">
+        <%= render '/admins/header'%>
 
-<%= link_to "edit this game", edit_game_path(@game) %>
+        <!-- Container Fluid-->
+        <div class="container-fluid" id="container-wrapper">
+          <%= render '/admins/breadcrumb'%>
+          
+              
+          <div class="card mb-4">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary">Form Basic</h6>
+                </div>
+                <div class="card-body">
+                  
+                  
+                    <div class="form-group">
+                      <label for="game_name">Name</label>
+                      <input class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                        placeholder="Enter email" disabled value="<%= @game.name%>">
+                      <!--small id="emailHelp" class="form-text text-muted">We'll never share your
+                        email with anyone else.</small-->
+                    </div>
+                    <div class="form-group">
+                      <label for="game_description">Description</label>
+                      <textarea class="form-control" rows="3" name="game[description]" id="game_description" disabled><%= @game.description%></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Upload Cover Picture</label>
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="customFile">
+                        <label class="custom-file-label" for="customFile">Choose file</label>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Upload Cover Picture 2</label>
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="customFile">
+                        <label class="custom-file-label" for="customFile">Choose file</label>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Upload Game</label>
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="customFile">
+                        <label class="custom-file-label" for="customFile">Choose file</label>
+                      </div>
+                    </div>
+                    
+                    
+                    <input type="submit" onclick="window.location='<%=edit_game_path(@game)%>'" name="commit" value="Edit this game" class="btn btn-primary" data-disable-with="Submit">
+                    
+                  
+                </div>
+              </div>
+
+        </div>
+        <!---Container Fluid-->
+      </div>
+      <%= render '/admins/footer'%>
+    </div>
+  </div>
+
+  <!-- Scroll to top -->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+

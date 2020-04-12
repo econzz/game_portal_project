@@ -1,0 +1,42 @@
+
+    <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
+      <%= link_to(admin_top_path,class: 'sidebar-brand d-flex align-items-center justify-content-center') do%>
+        <div class="sidebar-brand-icon">
+          <!--img src="img/logo/logo2.png"-->
+        </div>
+        <div class="sidebar-brand-text mx-3">Neru-dashboard</div>
+      <% end %>	
+      <hr class="sidebar-divider my-0">
+      <li class="nav-item">
+      <%= link_to admin_top_path,class:"nav-link" do%>
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Dashboard</span>
+      <% end %>	
+
+      </li>
+      <hr class="sidebar-divider">
+      <div class="sidebar-heading">
+        Games Management
+      </div>
+      <li class="nav-item active">
+        <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePage" aria-expanded="true"
+          aria-controls="collapsePage">
+          <i class="fas fa-fw fa-columns"></i>
+          <span>Games</span>
+        </a>
+        <div id="collapsePage" class="collapse" aria-labelledby="headingPage" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+ 
+            <%= link_to games_path,class:"collapse-item" do%>
+            List
+            <% end %>	
+            <%= link_to new_game_path,class:"collapse-item" do%>
+            Add New Game
+            <% end %>	
+          </div>
+        </div>
+      </li>
+      <hr class="sidebar-divider">
+      <div class="version" id="version-ruangadmin"></div>
+    </ul>
+    <!-- Sidebar -->
