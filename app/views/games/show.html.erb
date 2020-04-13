@@ -30,11 +30,9 @@
                     </div>
                     
                     <div class="form-group">
-                      <label for="exampleInputPassword1">Upload Cover Picture</label>
-                      <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="customFile">
-                        <label class="custom-file-label" for="customFile">Choose file</label>
-                      </div>
+                      <label for="exampleInputPassword1">Cover Picture</label>
+                      
+                      <br><%= image_tag( @game.cover_image,style:"max-height: 90px") %>
                     </div>
                     <div class="form-group">
                       <label for="exampleInputPassword1">Upload Cover Picture 2</label>
@@ -46,6 +44,7 @@
                     <div class="form-group">
                       <label for="exampleInputPassword1">Upload Game</label>
                       <div class="custom-file">
+                        <br>test= <%=rails_blob_path(@game.game_zip, disposition: "attachment")%><br>
                         <input type="file" class="custom-file-input" id="customFile">
                         <label class="custom-file-label" for="customFile">Choose file</label>
                       </div>

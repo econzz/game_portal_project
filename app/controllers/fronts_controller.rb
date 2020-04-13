@@ -1,6 +1,7 @@
 class FrontsController < ApplicationController
   def index
-    @temporary = [1,2,3]
+    @games = Game.all
+    
   end
 
   def detail

@@ -171,16 +171,12 @@
 
 	};
 
-	// Document on load.
-	$(document).on('turbolinks:load', function(){
-		console.log("loaded?");
 		mobileMenuOutsideClick();
 		burgerMenu();
 		scrolledWindow();
 		
 		// Animations
 		contentWayPoint();
-	}); 
 	
 
 

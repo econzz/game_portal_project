@@ -28,8 +28,8 @@
                     <div class="form-group">
                       <label for="exampleInputPassword1">Upload Cover Picture</label>
                       <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="customFile">
-                        <label class="custom-file-label" for="customFile">Choose file</label>
+                        <%= f.file_field :cover_image,class:"custom-file-input" %>
+                        <%= f.label :cover_image,class:"custom-file-label" %>
                       </div>
                     </div>
                     <div class="form-group">
@@ -41,9 +41,10 @@
                     </div>
                     <div class="form-group">
                       <label for="exampleInputPassword1">Upload Game</label>
-                      <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="customFile">
-                        <label class="custom-file-label" for="customFile">Choose file</label>
+                      <div class="custom-file">game_zip
+                        <%= f.file_field :game_zip,class:"custom-file-input" %>
+                        <%= f.label :game_zip,class:"custom-file-label" %>
+                        
                       </div>
                     </div>
                     
