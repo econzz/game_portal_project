@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_13_142642) do
+ActiveRecord::Schema.define(version: 2020_04_15_150353) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 2020_04_13_142642) do
     t.string "cover_big"
     t.string "preview_big"
     t.integer "category"
+    t.string "game_id"
   end
 
 end

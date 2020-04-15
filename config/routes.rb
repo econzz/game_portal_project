@@ -7,7 +7,10 @@ Rails.application.routes.draw do
   
   root "fronts#index";
 
-  get "detail" => "fronts#detail"
+  get "detail/:id" => "fronts#detail",:as => 'detail'
+
+  get "play/:id" => "fronts#play",:as => 'play'
+  
   get 'admin' => 'admins#index'
 
   post 'admin' => 'sessions#create'

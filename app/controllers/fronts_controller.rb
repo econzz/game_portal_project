@@ -5,6 +5,10 @@ class FrontsController < ApplicationController
   end
 
   def detail
+    @game = Game.find(params[:id])
+  end
 
+  def play
+    @game = Game.find(params[:id])
   end
 end
