@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     admin = Admin.find_by_email(params[:email])
     if admin && admin.authenticate(params[:password])
       session[:admin_id] = admin.id
-      redirect_to admin_top_path, notice: "Logged in!"
+      redirect_to games_path, notice: "Logged in!"
     else
       redirect_to admin_path, notice: "Email or password is invalid"
     end

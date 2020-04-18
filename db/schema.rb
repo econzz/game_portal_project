@@ -42,15 +42,15 @@ ActiveRecord::Schema.define(version: 2020_04_15_150353) do
   end
 
   create_table "games", force: :cascade do |t|
-    t.string "name"
-    t.text "description"
-    t.string "path"
+    t.string "name", default: ""
+    t.text "description", default: ""
+    t.string "path", default: ""
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "numberOfPlay"
+    t.integer "numberOfPlay", default: 0
     t.string "cover_big"
     t.string "preview_big"
-    t.integer "category"
+    t.integer "category", default: 0
     t.string "game_id"
   end
 

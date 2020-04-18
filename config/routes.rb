@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   get "detail/:id" => "fronts#detail",:as => 'detail'
 
-  get "play/:id" => "fronts#play",:as => 'play'
+  get "detail/:id/play" => "fronts#play",:as => 'play'
   
   get 'admin' => 'admins#index'
 

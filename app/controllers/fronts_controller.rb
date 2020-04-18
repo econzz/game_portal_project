@@ -10,5 +10,7 @@ class FrontsController < ApplicationController
 
   def play
     @game = Game.find(params[:id])
+    @game.numberOfPlay += 1
+    @game.save
   end
 end
