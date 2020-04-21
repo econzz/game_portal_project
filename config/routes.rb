@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+
+  namespace 'api' do
+    namespace 'v1' do
+      get root :to => "pinterfaces#index"
+      post root :to => "pinterfaces#token"
+
+      get "player/:token" => "pinterfaces#player"
+    end
+  end
+
   resources :games, :path => "/admin/games"
   get 'sessions/new'
   get 'sessions/create'

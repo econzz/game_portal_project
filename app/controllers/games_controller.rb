@@ -106,7 +106,7 @@ class GamesController < ApplicationController
 
   def require_login
     if session[:admin_id] == nil
-      redirect_to admin_path, notice: "Please Login to proceed"
+      # redirect_to admin_path, notice: "Please Login to proceed"
     end
   end
 end

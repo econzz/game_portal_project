@@ -1,0 +1,171 @@
+
+
+.gdsdk__splash-background-container {
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow:hidden;
+  
+background:
+radial-gradient(black 10%, transparent 10%) 0 0,
+radial-gradient(black 10%, transparent 10%) 8px 8px,
+radial-gradient(rgba(255,255,255,.1) 10%, transparent 10%) 0 1px,
+radial-gradient(rgba(255,255,255,.1) 10%, transparent 10%) 8px 9px;
+background-color:#282828;
+background-size:16px 16px;
+             
+}
+
+.gdsdk__sdk-version{
+  position:absolute;
+  right:0;
+  top:0;  
+  font-size:8px;
+  padding-top:6px;                 
+  padding-right:6px;
+  color:#aaa;     
+}
+
+.gdsdk__splash-container {
+  display: flex;
+  flex-flow: column;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left:0;
+  width: 100%;
+  height: 100%;
+}
+
+.gdsdk__splash-top {
+  display: flex;
+  flex-flow: column;
+  box-sizing: border-box;
+  flex: 1;
+  align-self: center;
+  justify-content: center;
+}
+
+.gdsdk__splash-bottom {
+display: flex;
+flex-flow: column;
+box-sizing: border-box;
+align-self: center;
+justify-content: center;
+width: 100%;
+padding-left:6px;
+padding-right:6px;
+padding-bottom:6px;
+}
+
+.gdsdk__splash-top > div {
+  text-align: center;
+}
+
+.gdsdk__splash-top > div > button {
+  margin: auto;
+  padding: 8px;
+  border-radius: 5px;
+  border:0;
+  background: linear-gradient(0deg, #21A179, #1C8464);
+  color: white;
+  text-transform: uppercase;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  width: 150px;
+}
+
+.gdsdk__splash-top > div > button:hover {
+  background: linear-gradient(0deg, #1C8464, #21A179);
+}
+
+.gdsdk__splash-top > div > button:active {
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(0deg, #1C8464, #15674E);
+}
+
+#gameIcon {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: auto auto 12px;
+  border-radius: 5px;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  box-shadow: inset 0 5px 5px rgba(0, 0, 0, 0.5), 0 2px 4px rgba(0, 0, 0, 0.3);
+
+  background-position: center;
+  background-size: cover;
+}
+.gdsdk__splash-bottom > .gdsdk__splash-consent,
+.gdsdk__splash-bottom > .gdsdk__splash-title {
+  box-sizing: border-box;
+  width: 100%;
+  color: #fff;
+  text-align: justify;
+  font-size: 12px;
+  font-family: Arial;
+  font-weight: normal;
+  line-height: 150%;
+}
+.gdsdk__splash-bottom > .gdsdk__splash-title {
+  text-align: center;
+  font-size: 18px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  line-height: 100%;
+  text-transform: uppercase;
+}
+.gdsdk__splash-bottom > .gdsdk__splash-consent a {
+  color: #fff;
+}
+
+.gdsdk__loader,
+.gdsdk__loader:after {
+border-radius: 50%;
+width: 1.5em;
+height: 1.5em;
+}
+
+.gdsdk__loader {
+margin: 0px auto;
+font-size: 10px;
+position: relative;
+text-indent: -9999em;
+border-top: 1.1em solid rgba(255, 255, 255, 0.2);
+border-right: 1.1em solid rgba(255, 255, 255, 0.2);
+border-bottom: 1.1em solid rgba(255, 255, 255, 0.2);
+border-left: 1.1em solid #ffffff;
+-webkit-transform: translateZ(0);
+-ms-transform: translateZ(0);
+transform: translateZ(0);
+-webkit-animation: gdsdk__load8 1.1s infinite linear;
+animation: gdsdk__load8 1.1s infinite linear;
+display:none;
+}
+@-webkit-keyframes gdsdk__load8 {
+0% {
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+100% {
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+}
+@keyframes gdsdk__load8 {
+0% {
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+100% {
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+}
