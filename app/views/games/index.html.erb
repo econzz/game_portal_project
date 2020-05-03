@@ -37,7 +37,7 @@
                           <td><%= game.name%></td>
                           <td><%= game.description%></td>
                           <td><%= game.numberOfPlay%></td>
-                          <td><%= link_to "Detail", game_path(game), class:"btn btn-sm btn-primary"%></td>
+                          <td><%= link_to "Edit", edit_game_path(game), class:"btn btn-sm btn-primary"%></td>
                           <td><%= link_to "Delete", game_path(game), method: :delete, data:{confirm: "are you sure?"}, class:"btn btn-danger mb-1" %></td>
                         </tr>
                       <%end%>

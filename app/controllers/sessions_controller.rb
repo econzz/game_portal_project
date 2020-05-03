@@ -5,6 +5,9 @@ class SessionsController < ApplicationController
   def create
     admin = Admin.find_by_email(params[:email])
     if admin && admin.authenticate(params[:password])
+      if params[:remember_me]
+        cookies.signed[:user_id] = { value: admin.id, expires: 2.weeks.from_now }
+      end
       session[:admin_id] = admin.id
       redirect_to games_path, notice: "Logged in!"
     else
@@ -14,6 +17,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:admin_id] = nil
+    cookies.delete :user_id
     redirect_to admin_path, notice: "Logged out!"
   end
 

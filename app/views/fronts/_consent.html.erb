@@ -2,14 +2,14 @@
 <%= stylesheet_link_tag "fronts/portal.css" %>
 
 
-<div id="gdsdk__splash" style="z-index: 1010;  width: 100%; height: 100%; top: 0px; left: 0px;">
+
   <div class="gdsdk__splash-background-container">
-                  <div class="gdsdk__sdk-version">1.5.79</div>
-                  <div class="gdsdk__splash-container">
+                  <div class="gdsdk__sdk-version">0.0.0</div>
+                  <div class="gdsdk__splash-container" id="splashContainer">
                       <div class="gdsdk__splash-top">
                           <div>
                             <div><%= image_tag( @game.cover_image,id:"gameIcon") %></div>
-                            <button id="gdsdk__splash-button">PLAY</button> 
+                            <button id="playButton" >PLAY</button> 
                             <div class="gdsdk__loader">Loading...</div>
                           </div>
                       </div>
@@ -27,4 +27,8 @@
                       </div>
                   </div>       
                 </div>
-            </div>
+<script>
+$( "#playButton" ).click(function() {
+  $("#splashContainer").hide();
+});
+</script>

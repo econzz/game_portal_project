@@ -2,6 +2,9 @@ rails g controller sessions new create destroy
 rails console
 
 admin = new Admin(email:"aa@aa.com",password:"pass")
+admin.save
+
+Admin.create(email: "aa@aa.com", password: "p0p0rinG")
 
 https://github.com/rubyzip/rubyzip
 

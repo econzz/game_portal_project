@@ -1,26 +1,29 @@
 class GamesController < ApplicationController
-  before_action :require_login, :set_game, only: [:edit,:update, :show, :destroy]
+  before_action :require_login
+  before_action :set_game, only: [:edit,:update, :show, :destroy]
   def index
       @games = Game.all
   end
 
   def new
-    @game = Game.new(:numberOfPlay => 0, :cover_big=>"",:preview_big=>"",:category=>1,)
+    @game = Game.new(:numberOfPlay => 0)
   end
 
   def create
-    #render plain: params[:game].inspect
-    puts "================= START CREATE= "
     @game = Game.new(game_params)
-    @game.cover_big = rails_blob_path(@game.cover_image, disposition: "attachment")
     @game.game_id = Time.now.to_f.to_s
-    puts "================= >>>>= "+game_params[:game_zip].tempfile.to_s
     puts "================= NEW ID IS >>>>= "+@game.game_id
+    if game_params[:game_zip]
+      puts "================= >>>>= "+game_params[:game_zip].tempfile.to_s
+      unzipAndSaveToPublic(game_params[:game_zip].tempfile,@game.game_id)
+    end
 
-    unzipAndSaveToPublic(game_params[:game_zip].tempfile,@game.game_id)
+    if game_params[:cover_image]
+      @game.cover_big = rails_blob_path(@game.cover_image, disposition: "attachment")
+    end
+    
+    
     if @game.save
-      puts "================= = END"
-      #unzip
       flash[:notice] = "Game is successfully saved"
       redirect_to games_path(@game)
     else
@@ -46,6 +49,10 @@ class GamesController < ApplicationController
       path=Rails.root + 'public/games/'+@game.game_id
       delete_directory(path)
       unzipAndSaveToPublic(game_params[:game_zip].tempfile,@game.game_id)
+    end
+
+    if game_params[:cover_image]
+      @game.cover_big = rails_blob_path(@game.cover_image, disposition: "attachment")
     end
 
     if @game.update(game_params)
@@ -106,7 +113,7 @@ class GamesController < ApplicationController
 
   def require_login
     if session[:admin_id] == nil
-      # redirect_to admin_path, notice: "Please Login to proceed"
+       redirect_to admin_path, notice: "Please Login to proceed"
     end
   end
 end
