@@ -4,7 +4,7 @@ rails console
 admin = new Admin(email:"aa@aa.com",password:"pass")
 admin.save
 
-Admin.create(email: "aa@aa.com", password: "p0p0rinG")
+Admin.create(email:"aa@aa.com",password:"pass")
 
 https://github.com/rubyzip/rubyzip
 
@@ -75,3 +75,8 @@ end
 
 uploader = S3ZipUploader.new("/path/to/myzip.zip", MYS3CREDS)
 uploader.upload_zip_contents
+
+
+
+ bundle exec passenger start
+ bundle exec passenger stop
