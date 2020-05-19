@@ -12,14 +12,13 @@ class GamesController < ApplicationController
   def create
     @game = Game.new(game_params)
     @game.game_id = Time.now.to_f.to_s
-    puts "================= NEW ID IS >>>>= "+@game.game_id
+
     if game_params[:game_zip]
-      puts "================= >>>>= "+game_params[:game_zip].tempfile.to_s
       unzipAndSaveToPublic(game_params[:game_zip].tempfile,@game.game_id)
     end
 
-    if game_params[:cover_image]
-      @game.cover_big = rails_blob_path(@game.cover_image, disposition: "attachment")
+    if game_params[:cover_image_big]
+      @game.cover_big = rails_blob_path(@game.cover_image_big, disposition: "attachment")
     end
     
     
@@ -51,8 +50,8 @@ class GamesController < ApplicationController
       unzipAndSaveToPublic(game_params[:game_zip].tempfile,@game.game_id)
     end
 
-    if game_params[:cover_image]
-      @game.cover_big = rails_blob_path(@game.cover_image, disposition: "attachment")
+    if game_params[:cover_image_big]
+      @game.cover_big = rails_blob_path(@game.cover_image_big, disposition: "attachment")
     end
 
     if @game.update(game_params)
@@ -105,7 +104,7 @@ class GamesController < ApplicationController
   end
 
   def game_params
-    params.require(:game).permit(:name,:path,:description,:cover_image,:game_zip)
+    params.require(:game).permit(:name,:path,:description,:cover_image,:cover_image_big,:icon_image,:game_zip)
   end
 
 

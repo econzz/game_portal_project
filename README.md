@@ -24,3 +24,23 @@ Rails 5.2.4.2
 * Deployment instructions
 
 * ...
+
+TODO
+admin page
+1) change password admin and profile picture
+2) check picture format and size when uploading
+3) check zip files and index.html 
+4) when uploading in form show preview
+5) add categories for games
+6) register admins nelson.widjaya
+7) auto select game section at left bar navigation
+8) automated breadcrumbs?
+
+front
+1) add categories for games
+2) comments 
+3) loading 0-100% games
+
+API
+1) save/load data
+2) ranking?

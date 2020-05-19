@@ -26,9 +26,25 @@
                     </div>
                     
                     <div class="form-group">
-                      <label for="exampleInputPassword1">Upload Cover Picture</label>
+                      <label for="exampleInputPassword1">Upload Cover Picture (370x254)</label>
                       <div class="custom-file">
                         <%= f.file_field :cover_image,id:"cover", accept: 'image/png,image/gif,image/jpeg' %>
+                        
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Upload Cover Picture (800x549)</label>
+                      <div class="custom-file">
+                        <%= f.file_field :cover_image_big,id:"cover", accept: 'image/png,image/gif,image/jpeg' %>
+                        
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Upload Icon Picture (150x150)</label>
+                      <div class="custom-file">
+                        <%= f.file_field :icon_image,id:"icon", accept: 'image/png,image/gif,image/jpeg' %>
                         
                       </div>
                     </div>
