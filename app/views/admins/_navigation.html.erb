@@ -15,9 +15,28 @@
 
       </li>
       <hr class="sidebar-divider">
+      
       <div class="sidebar-heading">
         Games Management
       </div>
+      <li class="nav-item active">
+        <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePage2" aria-expanded="true"
+          aria-controls="collapsePage">
+          <i class="fas fa-fw fa-columns"></i>
+          <span>Categories</span>
+        </a>
+        <div id="collapsePage2" class="collapse" aria-labelledby="headingPage" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+ 
+          <%= link_to categories_path,class:"collapse-item" do%>
+            List
+            <% end %>	
+            <%= link_to new_category_path,class:"collapse-item" do%>
+            Add New Category
+            <% end %>	
+          </div>
+        </div>
+      </li>
       <li class="nav-item active">
         <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePage" aria-expanded="true"
           aria-controls="collapsePage">

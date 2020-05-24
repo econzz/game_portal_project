@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_15_150353) do
+ActiveRecord::Schema.define(version: 2020_05_24_110910) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -41,6 +41,20 @@ ActiveRecord::Schema.define(version: 2020_04_15_150353) do
     t.index ["email"], name: "index_admins_on_email", unique: true
   end
 
+  create_table "categories", force: :cascade do |t|
+    t.string "name", default: ""
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.string "commenter", default: ""
+    t.text "content", default: ""
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "game_id"
+  end
+
   create_table "games", force: :cascade do |t|
     t.string "name", default: ""
     t.text "description", default: ""
@@ -50,8 +64,9 @@ ActiveRecord::Schema.define(version: 2020_04_15_150353) do
     t.integer "numberOfPlay", default: 0
     t.string "cover_big"
     t.string "preview_big"
-    t.integer "category", default: 0
     t.string "game_id"
+    t.integer "category_id"
+    t.index ["category_id"], name: "index_games_on_category_id"
   end
 
 end

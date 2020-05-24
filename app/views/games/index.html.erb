@@ -24,6 +24,7 @@
                       <tr>
                         <th>Game ID</th>
                         <th>Game Name</th>
+                        <th>Game Categories</th>
                         <th>Game Description</th>
                         <th>Game play number</th>
                         <th>Action</th>
@@ -35,6 +36,7 @@
                         <tr>
                           <td><a href="#"><%= game.id %></a></td>
                           <td><%= game.name%></td>
+                          <td><%= game.category.name%></td>
                           <td><%= game.description%></td>
                           <td><%= game.numberOfPlay%></td>
                           <td><%= link_to "Edit", edit_game_path(game), class:"btn btn-sm btn-primary"%></td>

@@ -1,6 +1,6 @@
 class Game < ApplicationRecord
   validates :name, presence: true, length: {minimum: 1, maximum: 50}
-  validates :description, presence: true, length: {minimum: 1, maximum: 300}
+  validates :description, presence: true, length: {minimum: 1, maximum: 9000}
 
   has_one_attached :cover_image
   validates :cover_image, attached: true, content_type: [:png, :jpg, :jpeg], dimension: { width: 370, height: 254 }
@@ -14,5 +14,7 @@ class Game < ApplicationRecord
   has_one_attached :game_zip
   validates :game_zip, attached: true, content_type: { in: 'application/zip', message: 'is not a ZIP' }
 
-  
+  belongs_to :category
+
+  has_many :comments
 end

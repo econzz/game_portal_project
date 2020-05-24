@@ -16,10 +16,8 @@
                   <p class="mb-4">An ordinary guy with interest on a lot of things</p>
                   <p><a href="#" class="btn btn-primary btn-sm rounded px-4 py-2">Read my bio</a></p>
                   <p class="social">
-                    <a href="#" class="p-2"><span class="fa fa-facebook"></span></a>
-                    <a href="#" class="p-2"><span class="fa fa-twitter"></span></a>
-                    <a href="#" class="p-2"><span class="fa fa-instagram"></span></a>
-                    <a href="#" class="p-2"><span class="fa fa-youtube-play"></span></a>
+                    <a href="https://www.facebook.com/nelson.widjaya" class="p-2" target="_blank"><span class="fa fa-facebook"></span></a>
+                   
                   </p>
                 </div>
               </div>
@@ -70,31 +68,16 @@
             <div class="sidebar-box">
               <h3 class="heading">Categories</h3>
               <ul class="categories">
-                <li><a href="#">Food <span>(12)</span></a></li>
-                <li><a href="#">Travel <span>(22)</span></a></li>
-                <li><a href="#">Lifestyle <span>(37)</span></a></li>
-                <li><a href="#">Business <span>(42)</span></a></li>
-                <li><a href="#">Adventure <span>(14)</span></a></li>
+                <% @categories.each do |category| %>
+                <li>
+                <%= link_to fronts_category_path(category) do%>
+                  <%=category.name%>
+                <%end%>
+                </li>
+               <%end%>
+                <!--li><a href="#">Food <span>(12)</span></a></li-->
               </ul>
             </div>
             <!-- END sidebar-box -->
 
-            <!--div class="sidebar-box">
-              <h3 class="heading">Tags</h3>
-              <ul class="tags">
-                <li><a href="#">Travel</a></li>
-                <li><a href="#">Adventure</a></li>
-                <li><a href="#">Food</a></li>
-                <li><a href="#">Lifestyle</a></li>
-                <li><a href="#">Business</a></li>
-                <li><a href="#">Freelancing</a></li>
-                <li><a href="#">Travel</a></li>
-                <li><a href="#">Adventure</a></li>
-                <li><a href="#">Food</a></li>
-                <li><a href="#">Lifestyle</a></li>
-                <li><a href="#">Business</a></li>
-                <li><a href="#">Freelancing</a></li>
-              </ul>
-            </div>
-          </div-->
           <!-- END sidebar -->

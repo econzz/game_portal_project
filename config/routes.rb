@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+
+  get 'comments/update'
+  get 'comments/delete'
+
+  resources :categories, :path => "/admin/categories"
+
   namespace 'api' do
     namespace 'v1' do
       get root :to => "pinterfaces#index"
@@ -17,9 +23,15 @@ Rails.application.routes.draw do
   
   root "fronts#index";
 
+  get "list/category/:cid" => "fronts#category",:as => 'fronts_category'
+
+
   get "detail/:id" => "fronts#detail",:as => 'detail'
 
+  post "detail/:id" => "fronts#newcomment"
+
   get "detail/:id/play" => "fronts#play",:as => 'play'
+  
   
   get 'admin' => 'admins#index'
 

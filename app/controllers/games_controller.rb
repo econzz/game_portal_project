@@ -7,10 +7,14 @@ class GamesController < ApplicationController
 
   def new
     @game = Game.new(:numberOfPlay => 0)
+    @categories = Category.all
   end
 
   def create
+    @categories = Category.all
     @game = Game.new(game_params)
+
+    @game.category = Category.find(params[:category_id])
     @game.game_id = Time.now.to_f.to_s
 
     if game_params[:game_zip]
@@ -31,18 +35,23 @@ class GamesController < ApplicationController
     
   end
 
-  
-
   ####
   def edit
-    @game = Game.find(params[:id])
+    @categories = Category.all
 
+    @game = Game.find(params[:id])
+    
 
     
   end
 
   def update
+    @categories = Category.all
+
+    
+
     @game = Game.find(params[:id])
+    @game.category = Category.find(params[:category_id])
 
     if game_params[:game_zip]
       path=Rails.root + 'public/games/'+@game.game_id

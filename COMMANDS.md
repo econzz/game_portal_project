@@ -1,3 +1,7 @@
+git add -A
+git commit -m "#13 validation image, import imagick, play html5 games, etc."
+git push -u origin master
+
 rails g controller sessions new create destroy
 rails console
 
