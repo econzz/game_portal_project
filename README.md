@@ -1,46 +1,40 @@
-# README
+##### Prerequisites
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The setups steps expect following tools installed on the system.
 
-Things you may want to cover:
+- Github
+- Ruby [2.4.0](https://github.com/organization/project-name/blob/master/.ruby-version#L1)
+- Rails [5.0.2](https://github.com/organization/project-name/blob/master/Gemfile#L12)
 
-* version
-Ruby 2.6.3p2
-Rails 5.2.4.2
+##### 1. Check out the repository
 
-* System dependencies
+```bash
+git clone git@github.com:organization/project-name.git
+```
 
-* Configuration
+##### 2. Create database.yml file
 
-* Database creation
+Copy the sample database.yml file and edit the database configuration as required.
 
-* Database initialization
+```bash
+cp config/database.yml.sample config/database.yml
+```
 
-* How to run the test suite
+##### 3. Create and setup the database
 
-* Services (job queues, cache servers, search engines, etc.)
+Run the following commands to create and setup the database.
 
-* Deployment instructions
+```ruby
+bundle exec rake db:create
+bundle exec rake db:setup
+```
 
-* ...
+##### 4. Start the Rails server
 
-TODO
-admin page
-1) change password admin and profile picture
-2) check picture format and size when uploading
-3) check zip files and index.html 
-4) when uploading in form show preview
-5) add categories for games
-6) register admins nelson.widjaya
-7) auto select game section at left bar navigation
-8) automated breadcrumbs?
+You can start the rails server using the command given below.
 
-front
-1) add categories for games
-2) comments 
-3) loading 0-100% games
+```ruby
+bundle exec rails s
+```
 
-API
-1) save/load data
-2) ranking?
+And now you can visit the site with the URL http://localhost:3000

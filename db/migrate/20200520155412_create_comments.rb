@@ -3,7 +3,7 @@ class CreateComments < ActiveRecord::Migration[5.2]
     create_table :comments do |t|
       t.string :commenter, :default => ""
       t.text :content, :default => ""
-      t.timestamps,
+      t.timestamps
       
     end
   end
