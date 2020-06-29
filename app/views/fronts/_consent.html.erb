@@ -30,7 +30,8 @@
 <script>
 $( "#playButton" ).click(function() {
   $("#splashContainer").hide();
-  
+  $( "body" ).trigger( "PortalStartGame" );
+
   $('<iframe>', {
    src: '/games/<%=@game.game_id%>/',
    id:  'myFrame',

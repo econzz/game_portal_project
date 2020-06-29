@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_24_110910) do
+ActiveRecord::Schema.define(version: 2020_06_29_104148) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -67,6 +67,25 @@ ActiveRecord::Schema.define(version: 2020_05_24_110910) do
     t.string "game_id"
     t.integer "category_id"
     t.index ["category_id"], name: "index_games_on_category_id"
+  end
+
+  create_table "players", force: :cascade do |t|
+    t.string "hash_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["hash_id"], name: "index_players_on_hash_id", unique: true
+  end
+
+  create_table "rankings", force: :cascade do |t|
+    t.string "game_id", default: ""
+    t.integer "score"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "games_id"
+    t.integer "players_id"
+    t.index ["games_id"], name: "index_rankings_on_games_id"
+    t.index ["players_id"], name: "index_rankings_on_players_id"
   end
 
 end

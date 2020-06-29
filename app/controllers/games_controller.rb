@@ -15,7 +15,7 @@ class GamesController < ApplicationController
     @game = Game.new(game_params)
 
     @game.category = Category.find(params[:category_id])
-    @game.game_id = Time.now.to_f.to_s
+    @game.game_id = Time.now.to_f.to_s.gsub(".", "")
 
     if game_params[:game_zip]
       unzipAndSaveToPublic(game_params[:game_zip].tempfile,@game.game_id)
@@ -62,7 +62,7 @@ class GamesController < ApplicationController
     if game_params[:cover_image_big]
       @game.cover_big = rails_blob_path(@game.cover_image_big, disposition: "attachment")
     end
-
+    
     if @game.update(game_params)
       flash[:notice] = "Game is successfully updated"
       redirect_to games_path(@game)

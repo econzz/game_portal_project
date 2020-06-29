@@ -11,7 +11,8 @@ Rails.application.routes.draw do
       get root :to => "pinterfaces#index"
       post root :to => "pinterfaces#token"
 
-      get "player/:token" => "pinterfaces#player"
+      get ":game_id/ranking_total/:page" => "pinterfaces#ranking_total"
+      post ":game_id/register_score" => "pinterfaces#register_score"
     end
   end
 
