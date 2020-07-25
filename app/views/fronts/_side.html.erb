@@ -80,4 +80,17 @@
             </div>
             <!-- END sidebar-box -->
 
+            <div class="sidebar-box">
+              <h3 class="heading">Top Players</h3>
+              <ul class="categories">
+                <% @ranking.each do |rank| %>
+                <li>
+                <%= rank.player.name%> -> <%= rank.score%>
+                </li>
+               <%end%>
+                <!--li><a href="#">Food <span>(12)</span></a></li-->
+              </ul>
+            </div>
+            <!-- END sidebar-box -->
+
           <!-- END sidebar -->

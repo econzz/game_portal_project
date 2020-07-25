@@ -13,6 +13,10 @@ Rails.application.routes.draw do
 
       get ":game_id/ranking_total/:page" => "pinterfaces#ranking_total"
       post ":game_id/register_score" => "pinterfaces#register_score"
+      post ":game_id/add_score" => "pinterfaces#addition_score"
+
+      post "player/:player_id" => "pinterfaces#register_player"
+      get "player/:player_id" => "pinterfaces#retrieve_player"
     end
   end
 

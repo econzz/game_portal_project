@@ -20,5 +20,8 @@ module GamePortalProject
       'Access-Control-Allow-Origin' => '*',
       'Access-Control-Request-Method' => '*'
     }
+    
+
+
   end
 end

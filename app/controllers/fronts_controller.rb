@@ -9,9 +9,11 @@ class FrontsController < ApplicationController
     @categories = Category.all
     @game = Game.find(params[:id])
 
-    @comments = Comment.where(game_id: params[:id])
+    @comments = @game.comments
 
-
+    @ranking = @game.rankings.order(score: :desc) 
+    puts "--------------ranking is"
+    puts ""+@ranking.inspect
     
   end
 
