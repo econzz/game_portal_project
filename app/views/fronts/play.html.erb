@@ -38,7 +38,7 @@ body {
 </style>
 <div id="gdsdk__splash" style="z-index: 1010;  width: 100%; height: 100%; top: 0px; left: 0px;">
 <%= render 'consent'%>
-<div id="game_id"> <%=@game.game_id%> </div>         
+<input type="hidden" id="game_id" value="<%=@game.game_id%>">   
 <div id="iframeGame"> </div>
 
 </div>

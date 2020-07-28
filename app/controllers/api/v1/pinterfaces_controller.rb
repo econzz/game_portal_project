@@ -174,6 +174,7 @@ module Api
             return nil
           end
         else
+          
           if @player.update(name: playerName)
             puts  "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
             puts  "UPDATED player"
