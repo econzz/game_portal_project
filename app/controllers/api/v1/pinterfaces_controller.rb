@@ -61,7 +61,7 @@ module Api
           if(@ranking != nil)
             scoreToSave = @ranking.score + score
           else
-            scoreToSave = 1
+            scoreToSave = score
           end
 
           if process_save_score(@game,@player,scoreToSave)
