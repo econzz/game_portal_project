@@ -57,7 +57,11 @@ module Api
           puts "ranking is1"
           puts @game.rankings
           @ranking = @game.rankings.find_by(players_id:@player.id)
-          scoreToSave = @ranking.score + score
+
+          if @ranking.score
+            scoreToSave = @ranking.score + score
+          else
+            scoreToSave = 1
 
           if process_save_score(@game,@player,scoreToSave)
             render json:{status:"ok"}
