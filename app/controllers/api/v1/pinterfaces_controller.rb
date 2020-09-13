@@ -58,7 +58,7 @@ module Api
           puts @game.rankings
           @ranking = @game.rankings.find_by(players_id:@player.id)
 
-          if @ranking.score
+          if(@ranking != nil)
             scoreToSave = @ranking.score + score
           else
             scoreToSave = 1
