@@ -62,6 +62,7 @@ module Api
             scoreToSave = @ranking.score + score
           else
             scoreToSave = 1
+          end
 
           if process_save_score(@game,@player,scoreToSave)
             render json:{status:"ok"}
