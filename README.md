@@ -1,40 +1,53 @@
-##### Prerequisites
+##### Nelson's HTML5 game portal website
 
-The setups steps expect following tools installed on the system.
+A simple game portal website made using ruby on rails 5.2
 
-- Github
-- Ruby [2.4.0](https://github.com/organization/project-name/blob/master/.ruby-version#L1)
-- Rails [5.0.2](https://github.com/organization/project-name/blob/master/Gemfile#L12)
+Some blog article about the project: (in Japanese)
+https://neruchanz.hatenablog.com/archive/category/HTML5%E3%82%B2%E3%83%BC%E3%83%A0%E3%83%9D%E3%83%BC%E3%82%BF%E3%83%AB%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88
 
-##### 1. Check out the repository
+### Link To see
+https://portal.neruchan.com
 
-```bash
-git clone git@github.com:organization/project-name.git
+admin page
+https://portal.neruchan.com/admin
+id: test@test.com
+pass: Test12345
+
+### Functionality
+Admin Page
+1) add, update, delete HTML5 games information
+2) upload HTML5 game bundle .zip + assets png
+3) add, update categories of games
+4) see how many plays each game has
+
+Front Side
+1) List of uploaded HTML5 games
+2) Play HTML5 games
+3) Leaderboard score for each game
+4) list by categories for each games
+
+SDK Side
+1) register/update player infos
+2) generate player ID from browser information
+3) login player
+4) register score
+5) show leaderboard
+6) show/hide home buttons
+
+### Install dependencies
+
+Using [Bundler](https://github.com/bundler/bundler) and [Yarn](https://github.com/yarnpkg/yarn):
+
+### Initialize the database
+
+```shell
+rails db:create db:migrate
 ```
 
-##### 2. Create database.yml file
+### Ruby version
+2.6.6
 
-Copy the sample database.yml file and edit the database configuration as required.
+### Rails version
+5.2.0
 
-```bash
-cp config/database.yml.sample config/database.yml
-```
 
-##### 3. Create and setup the database
-
-Run the following commands to create and setup the database.
-
-```ruby
-bundle exec rake db:create
-bundle exec rake db:setup
-```
-
-##### 4. Start the Rails server
-
-You can start the rails server using the command given below.
-
-```ruby
-bundle exec rails s
-```
-
-And now you can visit the site with the URL http://localhost:3000

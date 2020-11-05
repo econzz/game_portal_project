@@ -3,6 +3,22 @@ module Api
     class PinterfacesController < ApplicationController
       protect_from_forgery unless: -> { request.format.json? }
 
+      
+      #/v1/player/<playerID> POST
+      def register_player
+        playerId = params[:player_id]
+        playerName = params[:player_name]
+
+        @player = process_save_player(playerId,playerName)
+
+        if(@player != nil)
+          render json:{player:{id:@player.hash_id,name:@player.name}}
+        else
+          render json:{errno:802,message:"Player Error"}
+        end
+
+      end
+
       #/v1/<game_id>/ranking_total/<page>
       def ranking_total
         gameid = params[:game_id]
@@ -113,20 +129,6 @@ module Api
 
       end
 
-      #/v1/player/<playerID> POST
-      def register_player
-        playerId = params[:player_id]
-        playerName = params[:player_name]
-
-        @player = process_save_player(playerId,playerName)
-
-        if(@player != nil)
-          render json:{player:{id:@player.hash_id,name:@player.name}}
-        else
-          render json:{errno:802,message:"Player Error"}
-        end
-
-      end
 
 
       
