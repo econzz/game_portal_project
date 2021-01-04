@@ -1,7 +1,7 @@
 class FrontsController < ApplicationController
   def index
 
-    @games = Game.all
+    @games = Game.all.order(id: "DESC")
     @categories = Category.all
   end
 

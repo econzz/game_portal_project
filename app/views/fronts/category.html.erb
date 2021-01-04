@@ -33,7 +33,7 @@
 									<%= image_tag(game.cover_image,class:"img-fluid rounded") %>
 								<% end %>	
 								<div class="excerpt">
-								<span class="post-category text-white bg-secondary mb-3">Politics</span>
+								<span class="post-category text-white bg-secondary mb-3"><%= game.category.name%></span>
 
 								<h2><a href="single.html"><%= game.name%></a></h2>
 								<div class="post-meta align-items-center text-left clearfix">
