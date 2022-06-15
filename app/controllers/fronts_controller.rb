@@ -1,4 +1,5 @@
 class FrontsController < ApplicationController
+    
   def index
 
     @games = Game.all.order(id: "DESC")
