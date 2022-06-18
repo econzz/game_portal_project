@@ -7,6 +7,9 @@ https://neruchanz.hatenablog.com/archive/category/HTML5%E3%82%B2%E3%83%BC%E3%83%
 
 ### Link To see
 https://portal.neruchan.com
+if basic auth is required:
+id: test@test.com
+pass: Test12345
 
 admin page
 https://portal.neruchan.com/admin
